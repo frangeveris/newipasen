@@ -11,6 +11,8 @@ dependencies {
     implementation libs.kotlinReflect
 
     testImplementation libs.jUnit
+    testImplementation libs.mockito
+    testImplementation libs.mockitoInline
 
 }
 

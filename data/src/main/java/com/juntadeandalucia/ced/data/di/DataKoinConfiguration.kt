@@ -5,7 +5,7 @@ import com.juntadeandalucia.ced.data.BuildConfig
 import com.juntadeandalucia.ced.data.InterceptorConnection
 import com.juntadeandalucia.ced.data.operations.login.LoginRemoteDataSource
 import com.juntadeandalucia.ced.data.operations.login.LoginRepositoryImpl
-import com.juntadeandalucia.ced.data.operations.login.LoginService
+import com.juntadeandalucia.ced.data.operations.login.LoginRetrofit
 import com.juntadeandalucia.ced.data.remote.RemoteDataSourceExecutor
 import com.juntadeandalucia.ced.data.remote.ResponseParse
 import com.juntadeandalucia.ced.domain.operations.login.LoginRepository
@@ -43,7 +43,7 @@ class DataKoinConfiguration(private val baseUrl: String) {
         single(named("retrofit")) { createRetrofit(get(named("juntaClient"))) }
 
         //All called of retrofit
-        single { createRetrofitImplementation<LoginService>(get(named("retrofit"))) }
+        single { createRetrofitImplementation<LoginRetrofit>(get(named("retrofit"))) }
 
         // Response parsers
         single { ResponseParse(get()) }

@@ -1,13 +1,13 @@
 package com.juntadeandalucia.ced.newipasen.di
 
-import com.juntadeandalucia.ced.newipasen.operations.Login.LoginViewModel
-import com.juntadeandalucia.ced.newipasen.operations.Login.WelcomeViewModel
+import com.juntadeandalucia.ced.newipasen.operations.login.LoginViewModel
+import com.juntadeandalucia.ced.newipasen.operations.login.WelcomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 class PresentationKoinConfiguration {
 
-    fun getModule() = module{
+    fun getModule() = module {
 
         viewModel { LoginViewModel(get()) }
         viewModel { WelcomeViewModel() }
